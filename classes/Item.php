@@ -51,6 +51,13 @@ class Item {
    public function getDiscount(){
       return $this->discount;
    }
+
+
+   // funzione per avere il prezzo finale
+   public function getDiscountedPrice(){
+      $discountedPrice = $this->price - (($this->price * $this->discount) / 100);
+      return number_format($discountedPrice, 2, ", ", "");
+   }
 }
 
 ?>
