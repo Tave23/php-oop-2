@@ -9,15 +9,20 @@ Gestite eventuali eccezioni che si possono verificare (es: carta di credito scad
 <?php 
 
 require_once __DIR__ . "/classes/Item.php";
+require_once __DIR__ . "/classes/HandmadeItem.php";
 
 
 
 
-$new_item = new Item("Tazza da caffé", 10);
+$new_item = new Item("Tazza da caffé", 10.99);
 $new_item->setBrand("Azienda X");
 $new_item->setDescription("Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, labore?");
 $new_item->setDiscount(10);
 
+$new_HandmadeItem = new HandmadeItem ("Quadro futurista", 199.99);
+$new_HandmadeItem->setDescription("Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore error ullam neque, dolor veniam eius nobis placeat laudantium laboriosam nemo dignissimos corporis, tempore veritatis ut.");
+$new_HandmadeItem->setHowItsMade("Handmade");
+$new_HandmadeItem->setDiscount(5)
 
 
 ?>
@@ -31,7 +36,8 @@ $new_item->setDiscount(10);
    <title>PHP-OOP-2</title>
 </head>
 <body>
-      
+   
+   <!-- new item -->
    <h2>
       <!-- item's name -->
       <?php echo $new_item->getName() ?>
@@ -39,7 +45,7 @@ $new_item->setDiscount(10);
 
    <h3>
       <!-- item's price -->
-      <?php echo $new_item->getPrice() ?>€
+      <?php echo $new_item->getPrice() ?> €
    </h3>
 
    <h3>
@@ -56,6 +62,39 @@ $new_item->setDiscount(10);
       <!-- item's discount -->
       <?php echo $new_item->getDiscount() ?>%
    </h3>
+   <!-- /new item -->
+
+   <hr>
+
+   <!-- new HandmadeItem -->
+   <h2>
+      <!-- HandmadeItem's name -->
+      <?php echo $new_HandmadeItem->getName() ?>
+   </h2>
+
+   <h3>
+      <!-- HandmadeItem's price -->
+      <?php echo $new_HandmadeItem->getPrice() ?> €
+   </h3>
+
+   <h3>
+      <!-- HandmadeItem's price -->
+      <?php echo $new_HandmadeItem->getHowItsMade() ?>
+   </h3>
+
+   <h4>
+      <!-- HandmadeItem's description -->
+      Descrizione prodotto: <?php echo $new_HandmadeItem->getDescription() ?>
+   </h4>
+
+   <h3>
+      <!-- HandmadeItem's discount -->
+      <?php echo $new_HandmadeItem->getDiscount() ?>%
+   </h3>
+
+   <!-- /new HandmadeItem -->
+
+   <hr>
 
 
       
