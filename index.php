@@ -9,9 +9,12 @@ Gestite eventuali eccezioni che si possono verificare (es: carta di credito scad
 <?php 
 
 // collego i file delle classi
-require_once __DIR__ . "/classes/Item.php";
-require_once __DIR__ . "/classes/HandmadeItem.php";
-require_once __DIR__ . "/classes/SecondHandItem.php";
+require_once __DIR__ . "/classes/items_classes/Item.php";
+require_once __DIR__ . "/classes/items_classes/HandmadeItem.php";
+require_once __DIR__ . "/classes/items_classes/SecondHandItem.php";
+require_once __DIR__ . "/classes/customers_classes/basic_user.php";
+require_once __DIR__ . "/classes/customers_classes/premium_user.php";
+
 
 
 
