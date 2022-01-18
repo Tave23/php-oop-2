@@ -18,7 +18,7 @@ require_once __DIR__ . "/classes/customers_classes/premium_user.php";
 
 
 
-// creo un item
+// creo un item "base"
 $new_item = new Item("Tazza da caffé", 10.99);
 $new_item->setBrand("Azienda X");
 $new_item->setDescription("Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, labore?");
@@ -38,6 +38,16 @@ $new_SecondHandItem->setDescription("Lorem ipsum dolor sit amet consectetur adip
 $new_SecondHandItem->setBrand("Decathlon");
 $new_SecondHandItem->setCondition("In good condition");
 $new_SecondHandItem->setDiscount(15);
+
+
+// creo profilo basic_user
+$new_BasicUser = new BasicUser ("Maurizio", "Rossi");
+$new_BasicUser->setEmail("Mauryred@gmail.com");
+$new_BasicUser->setDiscount(10);
+
+// creo profilo premium_user
+$new_PremiumUser = new PremiumUser("Francesca", "Verdi", "Premium");
+$new_PremiumUser->setEmail("Fragreen@gmail.com");
 
 
 
@@ -155,11 +165,31 @@ $new_SecondHandItem->setDiscount(15);
 
    <h2>
       <!-- SecondHandItem's discountedPrice -->
-      Il prezzo scontato è: <?php echo $new_SecondHandItem->getDiscountedPrice() ?>€
+      Il prezzo scontato è: <?php echo $new_SecondHandItem->getDiscountedPrice() ?>€ <br>
+      Il prezzo per gli utenti iscritti è: 
    </h2>
 
    <!-- **** /new SecondHandItem **** -->
 
+   <hr>
+
+   <!-- lista consumatori basic-->
+   <h3>
+      <?php echo $new_BasicUser->getName() ?> <?php echo $new_BasicUser->getLastname() ?> <br>
+      <?php echo $new_BasicUser->getEmail() ?> <br>
+      Ha diritto ad uno sconto aggiuntivo del <?php echo $new_BasicUser->getDiscount() ?>%
+   </h3>
+   <!-- /lista consumatori basic-->
+
+   <hr>
+
+   <!-- lista consumatori premium-->
+   <h3>
+      <?php echo $new_PremiumUser->getName() ?> <?php echo $new_PremiumUser->getLastname() ?> <br>
+      <?php echo $new_PremiumUser->getEmail() ?> <br>
+      Ha diritto ad uno sconto aggiuntivo del <?php echo $new_PremiumUser->getDiscount() ?>% essendo un utente di livello <?php echo $new_PremiumUser->getSubscription() ?>
+   </h3>
+   <!-- /lista consumatori premium-->
 
 
    

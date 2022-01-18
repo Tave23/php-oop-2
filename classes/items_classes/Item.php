@@ -1,6 +1,5 @@
 <?php  
 
-
 class Item {
    private $name;
    private $price;
@@ -58,6 +57,8 @@ class Item {
       $discountedPrice = $this->price - (($this->price * $this->discount) / 100);
       return number_format($discountedPrice, 2, ", ", "");
    }
+
+
 }
 
 ?>
