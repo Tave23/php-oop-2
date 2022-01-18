@@ -8,6 +8,16 @@ Gestite eventuali eccezioni che si possono verificare (es: carta di credito scad
 
 <?php 
 
+require_once __DIR__ . "/classes/Item.php";
+
+
+
+
+$new_item = new Item("Tazza da caffé", 10);
+$new_item->setBrand("Azienda X");
+$new_item->setDescription("Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, labore?");
+$new_item->setDiscount(10);
+
 
 
 ?>
@@ -21,6 +31,39 @@ Gestite eventuali eccezioni che si possono verificare (es: carta di credito scad
    <title>PHP-OOP-2</title>
 </head>
 <body>
+      
+   <h2>
+      <!-- item's name -->
+      <?php echo $new_item->getName() ?>
+   </h2>
+
+   <h3>
+      <!-- item's price -->
+      <?php echo $new_item->getPrice() ?>€
+   </h3>
+
+   <h3>
+      <!-- item's brand -->
+      <?php echo $new_item->getBrand() ?>
+   </h3>
+
+   <h4>
+      <!-- item's description -->
+      Descrizione prodotto: <?php echo $new_item->getDescription() ?>
+   </h4>
+
+   <h3>
+      <!-- item's discount -->
+      <?php echo $new_item->getDiscount() ?>%
+   </h3>
+
+
+      
+   
+
+
+
+
    
 </body>
 </html>
