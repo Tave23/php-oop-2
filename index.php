@@ -58,7 +58,7 @@ $new_SecondHandItem->setDiscount(15);
 
    <h3>
       <!-- item's price -->
-      <?php echo $new_item->getPrice() ?> €
+      Il prezzo iniziale è: <?php echo $new_item->getPrice() ?> €
    </h3>
 
    <h3>
@@ -92,7 +92,7 @@ $new_SecondHandItem->setDiscount(15);
 
    <h3>
       <!-- HandmadeItem's price -->
-      <?php echo $new_HandmadeItem->getPrice() ?> €
+      Il prezzo iniziale è: <?php echo $new_HandmadeItem->getPrice() ?> €
    </h3>
 
    <h3>
@@ -132,7 +132,7 @@ $new_SecondHandItem->setDiscount(15);
 
    <h3>
       <!-- SecondHandItem's price -->
-      <?php echo $new_SecondHandItem->getPrice() ?> €
+      Il prezzo iniziale è: <?php echo $new_SecondHandItem->getPrice() ?> €
    </h3>
 
    <h3>
@@ -156,11 +156,6 @@ $new_SecondHandItem->setDiscount(15);
    </h2>
 
    <!-- **** /new SecondHandItem **** -->
-
-
-      
-   
-
 
 
 
