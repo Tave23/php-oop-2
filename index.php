@@ -8,21 +8,34 @@ Gestite eventuali eccezioni che si possono verificare (es: carta di credito scad
 
 <?php 
 
+// collego i file delle classi
 require_once __DIR__ . "/classes/Item.php";
 require_once __DIR__ . "/classes/HandmadeItem.php";
+require_once __DIR__ . "/classes/SecondHandItem.php";
 
 
 
-
+// creo un item
 $new_item = new Item("Tazza da caffé", 10.99);
 $new_item->setBrand("Azienda X");
 $new_item->setDescription("Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, labore?");
 $new_item->setDiscount(10);
 
+
+// creo un HandmadeItem
 $new_HandmadeItem = new HandmadeItem ("Quadro futurista", 199.99);
 $new_HandmadeItem->setDescription("Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore error ullam neque, dolor veniam eius nobis placeat laudantium laboriosam nemo dignissimos corporis, tempore veritatis ut.");
 $new_HandmadeItem->setHowItsMade("Handmade");
-$new_HandmadeItem->setDiscount(5)
+$new_HandmadeItem->setDiscount(5);
+
+
+// creo un SecondHandItem
+$new_SecondHandItem = new SecondHandItem ("Bicicletta per bambino", 129.99);
+$new_SecondHandItem->setDescription("Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore error ullam neque, dolor veniam eius nobis placeat laudantium laboriosam nemo dignissimos corporis, tempore veritatis ut. laboriosam nemo dignissimos corporis, tempore veritatis ut.");
+$new_SecondHandItem->setBrand("Decathlon");
+$new_SecondHandItem->setCondition("In good condition");
+$new_SecondHandItem->setDiscount(15);
+
 
 
 ?>
@@ -37,7 +50,7 @@ $new_HandmadeItem->setDiscount(5)
 </head>
 <body>
    
-   <!-- new item -->
+   <!-- **** new item **** -->
    <h2>
       <!-- item's name -->
       <?php echo $new_item->getName() ?>
@@ -62,11 +75,11 @@ $new_HandmadeItem->setDiscount(5)
       <!-- item's discount -->
       <?php echo $new_item->getDiscount() ?>%
    </h3>
-   <!-- /new item -->
+   <!-- **** /new item **** -->
 
    <hr>
 
-   <!-- new HandmadeItem -->
+   <!-- **** new HandmadeItem **** -->
    <h2>
       <!-- HandmadeItem's name -->
       <?php echo $new_HandmadeItem->getName() ?>
@@ -92,9 +105,42 @@ $new_HandmadeItem->setDiscount(5)
       <?php echo $new_HandmadeItem->getDiscount() ?>%
    </h3>
 
-   <!-- /new HandmadeItem -->
+   <!-- **** /new HandmadeItem **** -->
 
    <hr>
+
+   <!-- **** new SecondHandItem **** -->
+   <h2>
+      <!-- SecondHandItem's name -->
+      <?php echo $new_SecondHandItem->getName() ?>
+   </h2>
+
+   <h3>
+      <!-- SecondHandItem's brand -->
+      <?php echo $new_SecondHandItem->getBrand() ?>
+   </h3>
+
+   <h3>
+      <!-- SecondHandItem's price -->
+      <?php echo $new_SecondHandItem->getPrice() ?> €
+   </h3>
+
+   <h3>
+      <!-- SecondHandItem's price -->
+      <?php echo $new_SecondHandItem->getCondition() ?>
+   </h3>
+
+   <h4>
+      <!-- SecondHandItem's description -->
+      Descrizione prodotto: <?php echo $new_SecondHandItem->getDescription() ?>
+   </h4>
+
+   <h3>
+      <!-- SecondHandItem's discount -->
+      <?php echo $new_SecondHandItem->getDiscount() ?>%
+   </h3>
+
+   <!-- **** /new SecondHandItem **** -->
 
 
       
