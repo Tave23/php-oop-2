@@ -47,6 +47,12 @@ $new_PremiumUser = new PremiumUser("Francesca", "Verdi", "Premium");
 $new_PremiumUser->setEmail("Fragreen@gmail.com");
 
 
+$new_BasicUser->age = 30;
+$new_BasicUser->address = "Via Vai 25";
+$new_BasicUser->language = "Italian";
+$new_BasicUser->country = "Italy";
+
+var_dump($new_BasicUser);
 
 ?>
 

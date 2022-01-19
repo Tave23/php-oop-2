@@ -1,11 +1,15 @@
 <?php 
 
+require_once __DIR__ . "/infoUser.php";
+
 class BasicUser{
 
    private $name;
    private $lastname;
    private $email;
    public $discount;
+
+   use Info;
 
    function __construct($_name, $_lastname)
    {

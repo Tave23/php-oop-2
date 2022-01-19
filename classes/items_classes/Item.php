@@ -35,7 +35,6 @@ class Item {
    }
 
    // funzioni GET 
-
    public function getName(){
       return $this->name;
    }
