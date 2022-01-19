@@ -12,7 +12,7 @@ class Item {
    public function __construct($_name,$_price, $_discount)
    {
       $this->name = $_name;
-      $this->price = $_price;
+      $this->price = $this->checkIfIsNum($_price);
       $this->discount = $this->checkIfIsInteger($_discount);
    }
 
@@ -65,10 +65,19 @@ class Item {
       // se non è un intero o se supera il 100(%) allora dammi errore
       if(!is_int($discount) || $discount > 100){
         throw new Exception('Sconto non valido!');
-
       }
       
       return  $discount;
+   }
+
+    // funzione per verificare se è un intero
+   public function checkIfIsNum($price){
+
+      if(!is_numeric($price) || $price < 0){
+        throw new Exception('Sconto non valido!');
+      }
+      
+      return  $price;
    }
 
 
