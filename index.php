@@ -19,25 +19,22 @@ require_once __DIR__ . "/classes/customers_classes/premium_user.php";
 
 
 // creo un item "base"
-$new_item = new Item("Tazza da caffé", 10.99);
+$new_item = new Item("Tazza da caffé", 10.99, 10);
 $new_item->setBrand("Azienda X");
 $new_item->setDescription("Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, labore?");
-$new_item->setDiscount(10);
 
 
 // creo un HandmadeItem
-$new_HandmadeItem = new HandmadeItem ("Quadro futurista", 199.99);
+$new_HandmadeItem = new HandmadeItem ("Quadro futurista", 199.99, 5);
 $new_HandmadeItem->setDescription("Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore error ullam neque, dolor veniam eius nobis placeat laudantium laboriosam nemo dignissimos corporis, tempore veritatis ut.");
 $new_HandmadeItem->setHowItsMade("Handmade");
-$new_HandmadeItem->setDiscount(5);
 
 
 // creo un SecondHandItem
-$new_SecondHandItem = new SecondHandItem ("Bicicletta per bambino", 129.99);
+$new_SecondHandItem = new SecondHandItem ("Bicicletta per bambino", 129.99, 15);
 $new_SecondHandItem->setDescription("Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore error ullam neque, dolor veniam eius nobis placeat laudantium laboriosam nemo dignissimos corporis, tempore veritatis ut. laboriosam nemo dignissimos corporis, tempore veritatis ut.");
 $new_SecondHandItem->setBrand("Decathlon");
 $new_SecondHandItem->setCondition("In good condition");
-$new_SecondHandItem->setDiscount(15);
 
 
 // creo profilo basic_user
