@@ -11,7 +11,7 @@ class Item {
    // dati obbligatori NOME e PREZZO
    public function __construct($_name,$_price, $_discount)
    {
-      $this->name = $_name;
+      $this->name = $this->checkIfIsString($_name);
       $this->price = $this->checkIfIsNum($_price);
       $this->discount = $this->checkIfIsInteger($_discount);
    }
@@ -19,10 +19,10 @@ class Item {
 
    // funzioni SET
    public function setName($_name){
-      $this->name = $_name;
+      $this->name = $this->checkIfIsString($_name);
    }
    public function setPrice($_price){
-      $this->price = $_price;
+      $this->price = $this->checkIfIsNum($_price);
    }
    public function setBrand($_brand){
       $this->brand = $_brand;
@@ -31,7 +31,7 @@ class Item {
       $this->description = $_description;
    }
    public function setDiscount($_discount){
-      $this->discount = $_discount;
+      $this->discount = $this->checkIfIsInteger($_discount);
    }
 
    // funzioni GET 
