@@ -74,10 +74,20 @@ class Item {
    public function checkIfIsNum($price){
 
       if(!is_numeric($price) || $price < 0){
-        throw new Exception('Sconto non valido!');
+        throw new Exception('Prezzo non valido!');
       }
       
       return  $price;
+   }
+
+    // funzione per verificare se è un intero
+   public function checkIfIsString($name){
+
+      if(!is_string($name) && strlen($name > 0)){
+        throw new Exception('Nome prodotto non valido!');
+      }
+      
+      return  $name;
    }
 
 
